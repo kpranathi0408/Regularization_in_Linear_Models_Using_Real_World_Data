@@ -42,6 +42,12 @@ Which model generalizes best on real-world data.
 All conclusions are supported using error analysis and coefficient path visualizations.  
 
 # Methodology  
+The following regression models were implemented and compared:
+
+- Multiple Linear Regression
+- Ridge Regression
+- Lasso Regression
+- Elastic Net Regression
 
 # Experiments and Visualizations
 
