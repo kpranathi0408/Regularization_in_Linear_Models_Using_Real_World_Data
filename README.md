@@ -65,27 +65,28 @@ Lasso pushes some coefficients to zero
 Elastic Net shows mixed behavior
 
 # Analysis
-Why does regularization improve test performance?
+1. Why does regularization improve test performance?
 Regularization prevents the model from fitting noise in the training data.
 
 Examples:
 Linear regression may overfit when many features exist.
 Adding penalties forces the model to prefer simpler solutions.
 
-Why does Ridge shrink weights but keep features?
+2. Why does Ridge shrink weights but keep features?
 The L2 penalty discourages large weights but does not force them to zero.
 
 Examples:
 When predictors are correlated
 When all variables contain useful information
-Why does Lasso perform feature selection?
+
+3. Why does Lasso perform feature selection?
 The L1 penalty pushes small coefficients to exactly zero.
 
 Examples:
 Removing weak predictors
 Creating simpler interpretable models
 
-Why does Elastic Net behave differently?
+4. Why does Elastic Net behave differently?
 Elastic Net combines both L1 and L2 penalties.
 
 Examples:
