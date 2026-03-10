@@ -42,14 +42,64 @@ Which model generalizes best on real-world data.
 All conclusions are supported using error analysis and coefficient path visualizations.  
 
 # Methodology  
-1. Data Preprocessing  
-Steps performed:  
-Load dataset using pandas  
-Handle missing values (total_bedrooms)  
-Split dataset into 80% training and 20% testing  
-Standardize features using mean and standard deviation  
 
-Example preprocessing:
-df["total_bedrooms"].fillna(df["total_bedrooms"].median(), inplace=True)  
-Feature scaling ensures all variables contribute equally to the model.  
+# Experiments and Visualizations
+
+The assignment generates several plots.
+1. Training vs Testing Error
+   
+For each model: 
+Ridge Regression
+Lasso Regression
+Elastic Net
+
+These plots show how regularization strength affects model performance.
+
+2. Coefficient Shrinkage Paths
+
+Coefficient path plots illustrate how feature weights change as alpha increases.
+
+Observations: 
+Ridge gradually shrinks coefficients
+Lasso pushes some coefficients to zero
+Elastic Net shows mixed behavior
+
+# Analysis
+Why does regularization improve test performance?
+Regularization prevents the model from fitting noise in the training data.
+
+Examples:
+Linear regression may overfit when many features exist.
+Adding penalties forces the model to prefer simpler solutions.
+
+Why does Ridge shrink weights but keep features?
+The L2 penalty discourages large weights but does not force them to zero.
+
+Examples:
+When predictors are correlated
+When all variables contain useful information
+Why does Lasso perform feature selection?
+The L1 penalty pushes small coefficients to exactly zero.
+
+Examples:
+Removing weak predictors
+Creating simpler interpretable models
+
+Why does Elastic Net behave differently?
+Elastic Net combines both L1 and L2 penalties.
+
+Examples:
+Some coefficients shrink like Ridge
+Some features are eliminated like Lasso
+
+# Results
+
+Observations from the experiment:  
+Linear regression shows higher risk of overfitting.
+Ridge regression stabilizes coefficients and improves generalization.
+Lasso removes less important predictors.
+Elastic Net balances both shrinkage and sparsity.
+
+Best performing model: Ridge Regression
+Reason: The dataset contains multiple correlated features, and Ridge handles correlation effectively without discarding useful variables.
 
